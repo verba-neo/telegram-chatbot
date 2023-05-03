@@ -9,6 +9,7 @@
   - HTML / JSON
 - API
   - JSON
+  - 동행로또 API
   - Telegram API
   - ???
 - Client
