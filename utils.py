@@ -1,6 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+NAVER_CLIENT_ID = os.environ['NAVER_CLIENT_ID']
+NAVER_CLIENT_SECRET = os.environ['NAVER_CLIENT_SECRET']
 
 def get_kospi():
     URL = 'https://finance.naver.com/sise/'
@@ -26,8 +32,8 @@ def get_naver_shopping(item):
     URL = f'https://openapi.naver.com/v1/search/shop.json?query={item}'
 
     headers = {
-        'X-Naver-Client-Id': 'NhTugMmU0157d_E7bekC',
-        'X-Naver-Client-Secret': 'nlkJPixmWg'
+        'X-Naver-Client-Id': NAVER_CLIENT_ID,
+        'X-Naver-Client-Secret': NAVER_CLIENT_SECRET
     }
 
     res = requests.get(URL, headers=headers).json()
